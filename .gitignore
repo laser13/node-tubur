@@ -1,0 +1,7 @@
+node_modules/*
+projectFilesBackup/*
+.buildpath
+.project
+.idea/
+npm-debug.log
+!.gitkeep
