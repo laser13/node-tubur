@@ -4,4 +4,5 @@ projectFilesBackup/*
 .project
 .idea/
 npm-debug.log
+test.js
 !.gitkeep

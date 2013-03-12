@@ -11,11 +11,12 @@
         "url": "https://github.com/laser13/node-tubur.git"
     },
     "dependencies": {
+        "validator": "*"
     },
     "devDependencies": {},
     "optionalDependencies": {},
     "engines": {
-        "node": "*"
+        "node": "0.4.27"
     },
     "readme": "\n========",
     "readmeFilename": "README.md",
