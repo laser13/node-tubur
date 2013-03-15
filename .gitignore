@@ -1,8 +1,8 @@
+.idea/*
 node_modules/*
 projectFilesBackup/*
 .buildpath
 .project
-.idea/
 npm-debug.log
 test.js
 !.gitkeep
