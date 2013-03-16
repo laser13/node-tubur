@@ -5,7 +5,7 @@
     },
     "name": "node-tubur",
     "description": "dump helpers",
-    "version": "0.0.7",
+    "version": "0.0.10",
     "repository": {
         "type": "git",
         "url": "https://github.com/laser13/node-tubur.git"
