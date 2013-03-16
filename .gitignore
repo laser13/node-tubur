@@ -4,5 +4,4 @@ projectFilesBackup/*
 .buildpath
 .project
 npm-debug.log
-test.js
 !.gitkeep
