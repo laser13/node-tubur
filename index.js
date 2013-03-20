@@ -7,4 +7,15 @@
  * E = mc^2
  */
 
-module.exports = require('./lib/index');
+var __index = module.exports = exports;
+
+__index.dcp = require('./lib/dcp');
+__index.SDS = require('./lib/sds');
+__index.utils = require('./lib/utils');
+__index.error = require('./lib/error');
+__index.Wait = require('./lib/wait');
+__index.Paginator = require('./lib/paginator');
+
+__index.ApiClient = require('./lib/api/api-client');
+__index.ApiServer = require('./lib/api/api-server');
+__index.apiPacket = require('./lib/api/api-interface');
