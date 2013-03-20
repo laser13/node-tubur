@@ -5,14 +5,15 @@
     },
     "name": "node-tubur",
     "description": "dump helpers",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "repository": {
         "type": "git",
         "url": "https://github.com/laser13/node-tubur.git"
     },
     "dependencies": {
         "validator": "0.4.27",
-        "serializer": "*"
+        "serializer": "*",
+        "request": "*"
     },
     "devDependencies": {},
     "optionalDependencies": {},
@@ -21,5 +22,5 @@
     },
     "readme": "\n========",
     "readmeFilename": "README.md",
-    "_id": "node-tubur@0.0.11"
+    "_id": "node-tubur@0.0.12"
 }
