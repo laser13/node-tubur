@@ -19,4 +19,4 @@ __index.Paginator = require('./lib/paginator');
 
 __index.ApiClient = require('./lib/api/api-client');
 __index.ApiServer = require('./lib/api/api-server');
-__index.apiPacket = require('./lib/api/api-interface');
+__index.apiPacket = require('./lib/api/api-packet');
