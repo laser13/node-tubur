@@ -5,7 +5,7 @@
     },
     "name": "node-tubur",
     "description": "dump helpers",
-    "version": "0.0.22",
+    "version": "0.0.23",
     "repository": {
         "type": "git",
         "url": "https://github.com/laser13/node-tubur.git"
@@ -22,5 +22,5 @@
     },
     "readme": "\n========",
     "readmeFilename": "README.md",
-    "_id": "node-tubur@0.0.22"
+    "_id": "node-tubur@0.0.23"
 }
