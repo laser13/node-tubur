@@ -11,7 +11,12 @@ var __index = module.exports = exports;
 
 __index.dcp = require('./lib/dcp');
 __index.SDS = require('./lib/sds');
-__index.SimpleStructure = require('./lib/sds');
+__index.SimpleStructure = require('./lib/model/fields/index');
+
+__index.Field = require('./lib/model/fields/field');
+__index.StringField = require('./lib/model/fields/string');
+__index.EasyModel = require('./lib/model/model');
+
 __index.utils = require('./lib/utils');
 __index.error = require('./lib/error');
 __index.Wait = require('./lib/wait');

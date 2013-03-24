@@ -7,82 +7,38 @@
  * E = mc^2
  */
 
-var _tubur = require('./../index'),
-    _util = require('util');
+var tubur = require('./../index'),
+    util = require('util'),
 
-global.dump = _tubur.utils.dump;
+    Field = tubur.Field,
+    EasyModel = tubur.EasyModel,
 
-var wait = new _tubur.Wait({
-    interval: 1000,
-    log: false
-});
+    __$__;
 
-var xxx = function(title, interval, callback) {
+global.dump = tubur.utils.dump;
 
-    setTimeout(function() {
+var TestModel = function(initial) {
 
-        callback(title);
+    this.nmb = new Field({ type: 'number', required: true });
+    this.name = new Field({ type: 'string', min: 10, max: 15 });
+    this.date = new Field({ type: 'Date' });
+    this.xxx = new Field({ type: 'number', min: 5, max: 15 });
 
-    }, interval);
+    TestModel.super_.call(this, initial);
 
 };
+util.inherits(TestModel, EasyModel);
 
-wait.heap(function(ok) {
 
-    dump('Старт XXX-1 3 сек.');
-    xxx('XXX-1', 3000, function(title) {
+var textModel = new TestModel({
 
-        console.log(title);
-        ok();
-
-    });
-
-}, function(ok) {
-
-    dump('Старт XXX-2 6 сек.');
-    xxx('XXX-2', 6000, function(title) {
-
-        console.log(title);
-        ok();
-
-    });
-
-}, function(ok) {
-
-    dump('Старт XXX-3 12 сек.');
-    xxx('XXX-3', 12000, function(title) {
-
-        console.log(title);
-        ok();
-
-    });
+    nmb: 25,
+    name: 'Dasher',
+    date: new Date,
+    xxx: 10
 
 });
 
-wait.turn(function(ok) {
-
-    dump('Старт XXX-4 5сек.');
-    xxx('XXX-4', 5000, function(title) {
-
-        console.log(title);
-        ok();
-
-    });
-
-}, function(ok) {
-
-    dump('Старт XXX-5 5 сек.');
-    xxx('XXX-5', 5000, function(title) {
-
-        console.log(title);
-        ok();
-
-    });
-
-});
-
-wait.run(function() {
-
-    dump('FINISH');
-
-});
+dump(textModel.isValid(), 0);
+dump(textModel.getErrors(), 4);
+dump(textModel.toObject(), 2);
