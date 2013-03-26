@@ -11,7 +11,7 @@ var tubur = require('./../index'),
     util = require('util'),
 
     Field = tubur.Field,
-    EasyModel = tubur.EasyModel,
+    EasyStructure = tubur.EasyStructure,
 
     __$__;
 
@@ -20,22 +20,21 @@ global.dump = tubur.utils.dump;
 var TestModel = function(initial) {
 
     this.nmb = new Field({ type: 'number', required: true });
-    this.name = new Field({ type: 'string', min: 10, max: 15 });
+    this.name = new Field({ type: 'string', min: 5, max: 15 });
     this.date = new Field({ type: 'Date' });
     this.xxx = new Field({ type: 'number', min: 5, max: 15 });
 
     TestModel.super_.call(this, initial);
 
 };
-util.inherits(TestModel, EasyModel);
+util.inherits(TestModel, EasyStructure);
 
 
 var textModel = new TestModel({
 
     nmb: 25,
     name: 'Dasher',
-    date: new Date,
-    xxx: 10
+    date: new Date
 
 });
 
