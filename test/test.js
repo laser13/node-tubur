@@ -39,13 +39,13 @@ function TestModel2(initial) {
 }
 util.inherits(TestModel2, EasyStructure);
 
-function TestModel3(initial) {
+function TestModel3() {
 
     this.nmb = new Field({ type: 'number', required: true });
-    this.test1 = new Field({ type: 'Array', instance: TestModel1, required: false });
+//    this.test1 = new Field({ type: 'Array', instance: TestModel1, required: false });
 //    this.test2 = new Field({ type: 'object', instance: TestModel2, required: true });
 
-    TestModel3.super_.call(this, initial);
+    TestModel3.super_.call(this, arguments[0]);
 
 }
 util.inherits(TestModel3, EasyStructure);
