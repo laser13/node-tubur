@@ -62,4 +62,4 @@ var textModel = new TestModel3({
 
 dump('isValid: ', textModel.isValid(), 0);
 dump('getErrors: ', textModel.getErrors(), 4);
-dump('toObject: ', textModel.toObject(), 2);
+dump('toObject: ', textModel.getData(), 2);
