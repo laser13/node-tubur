@@ -42,7 +42,8 @@ util.inherits(TestModel2, EasyStructure);
 function TestModel3() {
 
     this.nmb = new Field({ type: 'number', required: true });
-//    this.test1 = new Field({ type: 'Array', instance: TestModel1, required: false });
+    this.nmb2 = new Field({ type: 'Date', default: '889' });
+    this.test1 = new Field({ type: 'Array', instance: TestModel1, required: false });
 //    this.test2 = new Field({ type: 'object', instance: TestModel2, required: true });
 
     TestModel3.super_.call(this, arguments[0]);
@@ -54,12 +55,12 @@ var textModel = new TestModel3({
 
     nmb: 24,
     test1: [
-        { nmb: [56] },
-        { nmb: 389 }
+        { nmb: [56], name: '123456' },
+        { nmb: [389, 678], name: '987654' }
     ]
 
 });
 
 dump('isValid: ', textModel.isValid(), 0);
 dump('getErrors: ', textModel.getErrors(), 4);
-dump('toObject: ', textModel.getData(), 2);
+dump('toObject: ', textModel.toObject(), 3);
