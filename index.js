@@ -15,7 +15,8 @@ __index.SimpleStructure = require('./lib/sds');
 
 __index.Field = require('./lib/model/fields/field');
 //__index.StringField = require('./lib/model/fields/string');
-__index.EasyStructure = require('./lib/model/model');
+__index.EasyStructure = require('./lib/model/structure/eazy');
+__index.LazyStructure = require('./lib/model/structure/lazy');
 
 __index.utils = require('./lib/utils');
 __index.error = require('./lib/error');

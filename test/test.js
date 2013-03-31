@@ -11,55 +11,45 @@ var tubur = require('./../index'),
     util = require('util'),
 
     Field = tubur.Field,
-    EasyStructure = tubur.EasyStructure,
+    LasyStructure = tubur.LazyStructure,
 
     __$__;
 
 global.dump = tubur.utils.dump;
 
-function TestModel1(initial) {
+var TestStructure2 = new LasyStructure({
 
-    this.nmb = new Field({ type: 'number[]', required: true });
-    this.name = new Field({ type: 'string', min: 5, max: 15, required: true });
-    this.date = new Field({ type: 'Date' });
-    this.xxx = new Field({ type: 'number', min: 5, max: 15, default: 0 });
+    Huk: new Field({ type: 'number[]', required: true }),
+    EndDate: new Field({ type: 'Date', required: true })
 
-    TestModel1.super_.call(this, initial);
+});
 
-}
-util.inherits(TestModel1, EasyStructure);
+var TestStructure4 = new LasyStructure({
 
-function TestModel2(initial) {
+    Nmb: new Field({ type: 'number[]', required: true }),
+    StartDate: new Field({ type: 'Date[]' }),
+    Porte: new Field({ type: 'object[]', instance: TestStructure2 })
 
-    this.nmb = new Field({ type: 'number', required: true });
-    this.test1 = new Field({ type: 'TestModel1', instance: TestModel1, required: true });
+});
 
-    TestModel2.super_.call(this, initial);
+var textModel = new TestStructure4({
 
-}
-util.inherits(TestModel2, EasyStructure);
-
-function TestModel3() {
-
-    this.nmb = new Field({ type: 'number', required: true });
-    this.nmb2 = new Field({ type: 'Date', default: '889' });
-    this.test1 = new Field({ type: 'Array', instance: TestModel1, required: false });
-//    this.test2 = new Field({ type: 'object', instance: TestModel2, required: true });
-
-    TestModel3.super_.call(this, arguments[0]);
-
-}
-util.inherits(TestModel3, EasyStructure);
-
-var textModel = new TestModel3({
-
-    nmb: 24,
-    test1: [
-        { nmb: [56], name: '123456' },
-        { nmb: [389, 678], name: '987654' }
+    Nmb: [24],
+    StartDate: [new Date()],
+    Porte: [
+        {
+            Huk: [67],
+            EndDate: new Date()
+        },
+        {
+            Huk: [6,7],
+            EndDate: new Date()
+        }
     ]
 
 });
+
+//dump(textModel, 5);
 
 dump('isValid: ', textModel.isValid(), 0);
 dump('getErrors: ', textModel.getErrors(), 4);
