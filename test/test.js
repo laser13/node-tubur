@@ -15,7 +15,7 @@ var tubur = require('./../index'),
 
     __$__;
 
-global.dump = tubur.utils.dump;
+global.dump = new tubur.utils.Log({ colors: true });
 
 var TestStructure2 = new LasyStructure({
 
@@ -51,6 +51,6 @@ var textModel = new TestStructure4({
 
 //dump(textModel, 5);
 
-dump('isValid: ', textModel.isValid(), 0);
-dump('getErrors: ', textModel.getErrors(), 4);
-dump('toObject: ', textModel.toObject(), 3);
+dump('isValid: ', textModel.isValid());
+dump('getErrors: ', textModel.getErrors());
+dump('toObject: ', textModel.toObject(), { depth: 0 });
