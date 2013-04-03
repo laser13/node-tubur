@@ -15,7 +15,7 @@ var tubur = require('./../index'),
 
     __$__;
 
-global.dump = new tubur.utils.Log({ colors: true });
+global.dump = new tubur.utils.Log({ colors: true, title: 'ERROR' });
 
 var TestStructure2 = new LasyStructure({
 
