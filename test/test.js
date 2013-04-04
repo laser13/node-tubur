@@ -32,22 +32,18 @@ var TestStructure4 = new LasyStructure({
 
 });
 
-var textModel = new TestStructure4({
+function SettingsUpdate ()
+{
+    this.ShowCnt  = new tubur.Field({ type: 'number', default: 0 });
+    this.ClickCnt = new tubur.Field({ type: 'number', default: 0 });
+    this.Budget   = new tubur.Field({ type: 'number', default: 0 });
+    this.Price    = new tubur.Field({ type: 'number', default: 0 });
 
-    Nmb: [24],
-    StartDate: [new Date()],
-    Porte: [
-        {
-            Huk: [67],
-            EndDate: new Date()
-        },
-        {
-            Huk: [6,7],
-            EndDate: new Date()
-        }
-    ]
+    SettingsUpdate.super_.apply(this, arguments);
+}
+util.inherits(SettingsUpdate, tubur.EasyStructure);
 
-});
+var textModel = new SettingsUpdate({});
 
 //dump(textModel, 5);
 
