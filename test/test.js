@@ -38,15 +38,21 @@ function SettingsUpdate ()
     this.ClickCnt = new tubur.Field({ type: 'number', default: 0 });
     this.Budget   = new tubur.Field({ type: 'number', default: 0 });
     this.Price    = new tubur.Field({ type: 'number', default: 0 });
+    this.TestDate = new tubur.Field({ type: 'Date' });
 
     SettingsUpdate.super_.apply(this, arguments);
 }
 util.inherits(SettingsUpdate, tubur.EasyStructure);
 
-var textModel = new SettingsUpdate({});
+var textModel = new SettingsUpdate({
+
+    TestDate: '2013-04-04T07:16:22.254Z'
+
+});
 
 //dump(textModel, 5);
 
 dump.info('isValid: ', textModel.isValid());
 dump.error('getErrors: ', textModel.getErrors());
 dump.notice('toObject: ', textModel.toObject(), { depth: 0 });
+dump.add('[ THE END ]');
