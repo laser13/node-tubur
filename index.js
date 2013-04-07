@@ -13,8 +13,8 @@ __index.dcp = require('./lib/dcp');
 __index.SDS = require('./lib/sds');
 __index.SimpleStructure = require('./lib/sds');
 
+__index.fields = require('./lib/model/fields/index');
 __index.Field = require('./lib/model/fields/field');
-//__index.StringField = require('./lib/model/fields/string');
 __index.EasyStructure = require('./lib/model/structure/eazy');
 __index.LazyStructure = require('./lib/model/structure/lazy');
 

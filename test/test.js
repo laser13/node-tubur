@@ -9,50 +9,48 @@
 
 var tubur = require('./../index'),
     util = require('util'),
+    should = require('should'),
+    assert = require("assert"),
 
-    Field = tubur.Field,
+    fields = tubur.fields,
     LasyStructure = tubur.LazyStructure,
 
     __$__;
 
 global.dump = new tubur.utils.Logger({ colors: true });
 
-var TestStructure2 = new LasyStructure({
+var StructNumber = new LasyStructure({
 
-    Huk: new Field({ type: 'number[]', required: true }),
-    EndDate: new Field({ type: 'Date', required: true })
+//    field1: new fields.Field({ type: 'number' }),
+//    field2: new fields.Field({ type: 'number', required: true }),
+
+//    field3: new fields.Field({ type: 'number[]' }),
+//    field4: new fields.Field({ type: 'number[]', required: true }),
+
+//    field5: new fields.NumberField({ required: true }),
+    field6: new fields.NumberField({ type: 'Array' }),
+
+//    field7: new fields.PositiveNumberField(),
+    field8: new fields.PositiveNumberField({ type: 'Array' })
+
+}, 'StructNumber');
+
+var structNumber = new StructNumber({
+
+//    field1: 25,
+//    field2: 26,
+//
+//    field3: 25,
+//    field4: 25,
+//
+//    field5: 'wert',
+    field6: ['wert', 56],
+
+//    field7: 25,
+    field8: 25
 
 });
 
-var TestStructure4 = new LasyStructure({
-
-    Nmb: new Field({ type: 'number[]', required: true }),
-    StartDate: new Field({ type: 'Date[]' }),
-    Porte: new Field({ type: 'object[]', instance: TestStructure2 })
-
-});
-
-function SettingsUpdate ()
-{
-    this.ShowCnt  = new tubur.Field({ type: 'number', default: 0 });
-    this.ClickCnt = new tubur.Field({ type: 'number', default: 0 });
-    this.Budget   = new tubur.Field({ type: 'number', default: 0 });
-    this.Price    = new tubur.Field({ type: 'number', default: 0 });
-    this.TestDate = new tubur.Field({ type: 'Date' });
-
-    SettingsUpdate.super_.apply(this, arguments);
-}
-util.inherits(SettingsUpdate, tubur.EasyStructure);
-
-var textModel = new SettingsUpdate({
-
-    TestDate: '2013-04-04T07:16:22.254Z'
-
-});
-
-//dump(textModel, 5);
-
-dump.info('isValid: ', textModel.isValid());
-dump.error('getErrors: ', textModel.getErrors());
-dump.notice('toObject: ', textModel.toObject(), { depth: 0 });
-dump.add('[ THE END ]');
+dump.info(structNumber.isValid());
+dump.error(structNumber.getErrors());
+dump.notice(structNumber.toObject());
