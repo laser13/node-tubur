@@ -19,38 +19,46 @@ var tubur = require('./../index'),
 
 global.dump = new tubur.utils.Logger({ colors: true });
 
-var StructNumber = new LasyStructure({
-
-//    field1: new fields.Field({ type: 'number' }),
-//    field2: new fields.Field({ type: 'number', required: true }),
-
-//    field3: new fields.Field({ type: 'number[]' }),
-//    field4: new fields.Field({ type: 'number[]', required: true }),
-
-//    field5: new fields.NumberField({ required: true }),
-    field6: new fields.NumberField({ type: 'Array' }),
-
-//    field7: new fields.PositiveNumberField(),
-    field8: new fields.PositiveNumberField({ type: 'Array' })
-
-}, 'StructNumber');
-
-var structNumber = new StructNumber({
-
-//    field1: 25,
-//    field2: 26,
+//var www1 = {
+//    "device" : {
+//        "geo" : {
+//            "city" : "RU MSK",
+//            "region" : "RU-MOS",
+//            "country" : "RU"
+//        },
+//        "userdata" : "",
+//        "ip" : "178.158.100.237",
+//        "ua" : "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1106.241 YaBrowser/1.5.1106.241 Safari/537.4"
+//    },
+//    "site" : {
+//        "rereferer" : "http://www.yandex.ru/",
+//        "referer" : "http://tv.yandex.ru/213/",
+//        "id" : "54061"
+//    },
+//    "imp" : [
+//        { "banner" : { "h" : 250, "w" : 300 }, "id" : "1"}
+//    ],
+//    "id" : "5592213553214834590"
+//};
 //
-//    field3: 25,
-//    field4: 25,
-//
-//    field5: 'wert',
-    field6: ['wert', 56],
-
-//    field7: 25,
-    field8: 25
-
-});
-
-dump.info(structNumber.isValid());
-dump.error(structNumber.getErrors());
-dump.notice(structNumber.toObject());
+//var www2 = {
+//    "device" : {
+//        "geo" : {
+//            "city" : "RU MSK",
+//            "region" : "RU-MOS",
+//            "country" : "RU"
+//        },
+//        "userdata" : "",
+//        "ip" : "95.165.165.39",
+//        "ua" : "Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3"
+//    },
+//    "site" : {
+//        "rereferer" : "http://www.yandex.ru/",
+//        "referer" : "http://tv.yandex.ru/213/",
+//        "id" : "54061"
+//    },
+//    "imp" : [
+//        { "banner" : { "h" : 250, "w" : 300 }, "id" : "1" }
+//    ],
+//    "id" : "5592213550923515803"
+//};
