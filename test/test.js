@@ -18,3 +18,32 @@ var tubur = require('./../index'),
     __$__;
 
 global.dump = new tubur.utils.Logger({ colors: true });
+
+var X1 = new LasyStructure({
+
+    www: new tubur.fields.Field({ type: 'string', required: true }),
+    ddd: new tubur.fields.Field({ type: 'number[]', required: true })
+
+});
+
+var X2 = new LasyStructure({
+
+    bbb: new tubur.fields.Field({ type: 'object[]', instance: X1, required: true })
+
+});
+
+var x11 = new X2({
+
+    bbb: [{}, 67]
+
+});
+
+var x12 = new X1({
+
+
+
+});
+
+//dump.info(x2.isValid());
+dump.error(x11.getErrors());
+//dump.error(x12.getErrors());
