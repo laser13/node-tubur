@@ -21,7 +21,7 @@ global.dump = new tubur.utils.Logger({ colors: true });
 
 var X1 = new LasyStructure({
 
-    www: new tubur.fields.Field({ type: 'string', required: true }),
+    www: new tubur.fields.Field({ type: 'string', required: true, alias: 'wqw' }),
     ddd: new tubur.fields.Field({ type: 'number[]', required: true })
 
 });
@@ -32,18 +32,14 @@ var X2 = new LasyStructure({
 
 });
 
-var x11 = new X2({
+var x11 = new X1({
 
-    bbb: [{}, 67]
-
-});
-
-var x12 = new X1({
-
-
+    wrw: 'retert',
+    ddd: [45],
+    eee: 78
 
 });
 
-//dump.info(x2.isValid());
+dump.info(x11.isValid());
 dump.error(x11.getErrors());
-//dump.error(x12.getErrors());
+dump.notice(x11.toObject());
