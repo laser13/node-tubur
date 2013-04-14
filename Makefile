@@ -3,7 +3,7 @@ TESTS = $(shell find test -name "*.test.js")
 
 test:
 	@NODE_ENV=test $(MOCHA) \
-	    --timeout 0 \
+		--timeout 0 \
 		--require should \
 		--reporter spec \
 		$(TESTS)

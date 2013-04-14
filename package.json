@@ -4,28 +4,26 @@
         "email": "me@pavlenov.ru"
     },
     "name": "node-tubur",
-    "description": "dump helpers",
-    "version": "0.0.52",
+    "description": "Бесплатный сахар",
+    "version": "0.0.53",
     "repository": {
         "type": "git",
         "url": "https://github.com/laser13/node-tubur.git"
     },
     "dependencies": {
-        "validator": "0.4.28",
         "serializer": "0.0.3",
         "request": "2.16.6",
-        "underscore": "1.4.4",
-        "cli-color": "*",
-
+        "cli-color": "0.2.2"
+    },
+    "devDependencies": {
         "should": "*",
         "mocha": "*"
     },
-    "devDependencies": {},
     "optionalDependencies": {},
     "engines": {
         "node": "*"
     },
     "readme": "\n=====================================================\n",
     "readmeFilename": "README.md",
-    "_id": "node-tubur@0.0.52"
+    "_id": "node-tubur@0.0.53"
 }
