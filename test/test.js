@@ -23,6 +23,7 @@ global.dump = new tubur.utils.Logger({ colors: true });
 
 function F1() {
 
+    this.num = new fields.Field({ type: 'number' });
     this.country = new fields.StringField({ type: 'Array', required: true, correct: true, default: 'ertyu' });
     this.em = new fields.EmailField({ required: true });
 
@@ -41,6 +42,7 @@ function F2() {
 util.inherits(F2, EasyStructure);
 
 var o1 = new F1({
+    num: '4575',
     country: 34,
     em: '123@tyu.ui'
 });
