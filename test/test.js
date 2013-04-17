@@ -48,5 +48,10 @@ var o1 = new F1({
 });
 var o2 = new F1({ f1: { www: 34 } });
 
-dump.error(o1.getErrors(), o1.isValid(), o1.toObject(), { color: 'cyan' });
+//dump.error(o1.getErrors(), o1.isValid(), o1.toObject(), { color: 'cyan' });
 //dump.info(o2.getErrors(), o2.isValid(), o2.toObject());
+
+var x = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987 } } };
+var k = 'www';
+
+dump.info(tubur.utils.hasKey(x, 'www', ['qqq', 'tt4']));
