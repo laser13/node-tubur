@@ -19,6 +19,7 @@ __index.EasyStructure = require('./lib/model/structure/easy');
 __index.LazyStructure = require('./lib/model/structure/lazy');
 
 __index.utils = require('./lib/utils');
+__index.DateTime = require('./lib/datetime');
 __index.error = require('./lib/error');
 __index.Wait = require('./lib/wait');
 __index.Paginator = require('./lib/paginator');
