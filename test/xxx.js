@@ -9,17 +9,15 @@
 
 var tubur = require('./../index'),
     util = require('util'),
-    underscore = require('underscore'),
-    should = require('should'),
-    assert = require("assert"),
 
     fields = tubur.fields,
-    LazyStructure = tubur.LazyStructure,
     EasyStructure = tubur.EasyStructure,
+
+    Collector = require('../lib/collector'),
 
     __$__;
 
-global.dump = new tubur.utils.Logger({ colors: true });
+global.dump = new tubur.Collector({ colored: true });
 
 function F1() {
 
@@ -51,7 +49,8 @@ var o2 = new F1({ f1: { www: 34 } });
 //dump.error(o1.getErrors(), o1.isValid(), o1.toObject(), { color: 'cyan' });
 //dump.info(o2.getErrors(), o2.isValid(), o2.toObject());
 
-var x = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987 } } };
-var k = 'www';
+var a = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987, ppp: { kkk: { ggg: [985677, 'fdfsdfs', new Date()] } } } }, iii: [123456, 'fdfsdfs', new Date()] };
 
-dump.info(tubur.utils.hasKey(x, 'www', ['qqq', 'tt4']));
+dump.info(tubur.utils.hasKey(a, 'www', ['qqq', 'ttt']));
+var _a = tubur.utils.clone(a);
+dump.info(a, _a, (a == a), (a == _a), (a.www == _a.www));

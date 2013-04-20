@@ -7,24 +7,24 @@
  * E = mc^2
  */
 
-var __index = module.exports = exports;
+exports.dcp = require('./lib/dcp');
+exports.SDS = require('./lib/sds');
+exports.SimpleStructure = require('./lib/sds');
 
-__index.dcp = require('./lib/dcp');
-__index.SDS = require('./lib/sds');
-__index.SimpleStructure = require('./lib/sds');
+exports.fields = require('./lib/model/fields/index');
+exports.Field = require('./lib/model/fields/field');
+exports.EasyStructure = require('./lib/model/structure/easy');
+exports.LazyStructure = require('./lib/model/structure/lazy');
 
-__index.fields = require('./lib/model/fields/index');
-__index.Field = require('./lib/model/fields/field');
-__index.EasyStructure = require('./lib/model/structure/easy');
-__index.LazyStructure = require('./lib/model/structure/lazy');
+exports.utils = require('./lib/utils');
+exports.error = require('./lib/error');
 
-__index.utils = require('./lib/utils');
-__index.DateTime = require('./lib/datetime');
-__index.error = require('./lib/error');
-__index.Wait = require('./lib/wait');
-__index.Paginator = require('./lib/paginator');
+exports.DateTime = require('./lib/datetime');
+exports.Collector = require('./lib/collector');
+exports.Wait = require('./lib/wait');
+exports.Paginator = require('./lib/paginator');
 
-__index.ApiClient = require('./lib/api/api-client');
-__index.ApiServer = require('./lib/api/api-server');
-__index.apiPacket = require('./lib/api/api-packet');
-__index.apiShortcut = require('./lib/api/api-shortcut');
+exports.ApiClient = require('./lib/api/api-client');
+exports.ApiServer = require('./lib/api/api-server');
+exports.apiPacket = require('./lib/api/api-packet');
+exports.apiShortcut = require('./lib/api/api-shortcut');
