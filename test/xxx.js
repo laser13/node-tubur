@@ -51,6 +51,6 @@ var o2 = new F1({ f1: { www: 34 } });
 
 var a = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987, ppp: { kkk: { ggg: [985677, 'fdfsdfs', new Date()] } } } }, iii: [123456, 'fdfsdfs', new Date()] };
 
-dump.info(tubur.utils.hasKey(a, 'www', ['qqq', 'ttt']));
+dump.add(tubur.utils.hasKey(a, 'www', ['qqq', 'ttt']));
 var _a = tubur.utils.clone(a);
-dump.info(a, _a, (a == a), (a == _a), (a.www == _a.www));
+dump.add(a, _a, (a == a), (a == _a), (a.www == _a.www));
