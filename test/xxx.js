@@ -50,7 +50,8 @@ var o2 = new F1({ f1: { www: 34 } });
 //dump.info(o2.getErrors(), o2.isValid(), o2.toObject());
 
 var a = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987, ppp: { kkk: { ggg: [985677, 'fdfsdfs', new Date()] } } } }, iii: [123456, 'fdfsdfs', new Date()] };
-
-dump.error([1,2,3,4], { colored: false });
-var _a = tubur.utils.clone(a);
-dump.info(1,2,3,4);
+var err = new tubur.error.SystemError(a, 'Кто здесь?');
+var dt = new tubur.DateTime();
+//dump.info(tubur.utils.isError(err), tubur.utils.isInstanceOf(err, Error), tubur.utils.isTuburError(err), tubur.utils.isSystemError(err), tubur.utils.isUnknownError(err));
+dump.info(dt.format('%y-%m-%d %H:%i:%s.%u'));
+//throw err;
