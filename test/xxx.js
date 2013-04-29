@@ -15,43 +15,33 @@ var tubur = require('./../index'),
 
     Collector = require('../lib/collector'),
 
+    wait = new tubur.Wait({ vita: 5 * 1000 }),
+
     __$__;
 
 global.dump = new tubur.Collector({ colored: true });
 
-function F1() {
 
-    this.num = new fields.Field({ type: 'number' });
-    this.country = new fields.StringField({ type: 'Array', required: true, correct: true, default: 'ertyu' });
-    this.em = new fields.EmailField({ required: true });
+wait.heap(function(ok) {
 
-    F1.super_.apply(this, arguments);
+    var i = 0;
+    var si = setInterval(function() {
 
-}
-util.inherits(F1, EasyStructure);
+        console.log(i);
+        i++;
 
-function F2() {
+        if (i > 6) {
+            clearInterval(si);
+            ok();
+        }
 
-    this.city = new fields.Field({ type: 'object[]', instance: F1, required: true, correct: true, default: new F1().toObject() });
+    }, 1000);
 
-    F2.super_.apply(this, arguments);
-
-}
-util.inherits(F2, EasyStructure);
-
-var o1 = new F1({
-    num: '4575',
-    country: 34,
-    em: '123@tyu.ui'
 });
-var o2 = new F1({ f1: { www: 34 } });
 
-//dump.error(o1.getErrors(), o1.isValid(), o1.toObject(), { color: 'cyan' });
-//dump.info(o2.getErrors(), o2.isValid(), o2.toObject());
+wait.run(function(err) {
 
-var a = { www: { qqq: 123, ttt: 321 }, ppp: { qqq: { fff: 987, ppp: { kkk: { ggg: [985677, 'fdfsdfs', new Date()] } } } }, iii: [123456, 'fdfsdfs', new Date()] };
-var err = new tubur.error.SystemError(a, 'Кто здесь?');
-var dt = new tubur.DateTime();
-//dump.info(tubur.utils.isError(err), tubur.utils.isInstanceOf(err, Error), tubur.utils.isTuburError(err), tubur.utils.isSystemError(err), tubur.utils.isUnknownError(err));
-dump.info(dt.format('%y-%m-%d %H:%i:%s.%u'));
-//throw err;
+    if (err) dump.error(err);
+    dump.info('end');
+
+});
