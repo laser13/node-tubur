@@ -15,27 +15,44 @@ var tubur = require('./../index'),
 
     Collector = require('../lib/collector'),
 
-    wait = new tubur.Wait({ vita: 5 * 1000 }),
+    wait = new tubur.Wait({ vita: 12 * 1000, log: false }),
 
     __$__;
 
 global.dump = new tubur.Collector({ colored: true });
 
 
-wait.heap(function(ok) {
+wait.turn(function(ok) {
 
     var i = 0;
     var si = setInterval(function() {
 
-        console.log(i);
+        console.log('1-' + i);
         i++;
 
-        if (i > 6) {
+        if (i > 7) {
             clearInterval(si);
-            ok();
+            ok(321);
         }
 
     }, 1000);
+
+});
+
+wait.turn(function(ok) {
+
+    var i = 0;
+    var si = setInterval(function() {
+
+        console.log('2-' + i);
+        i++;
+
+        if (i > 7) {
+            clearInterval(si);
+            ok(123);
+        }
+
+    }, 500);
 
 });
 
