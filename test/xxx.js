@@ -21,57 +21,56 @@ var tubur = require('./../index'),
 
 global.dump = new tubur.Collector({ colored: true });
 
-function XStruct() {
+//function XStruct() {
+//
+//    this.CdnNmb = new fields.Field({ required: true, type: "number", alias: 'cdnNmb', choices: [12,56] });
+//    this.CdnRequestData = new fields.Field({ required: false, type: "string", alias: 'cdnRequestData' });
+//
+//    XStruct.super_.apply(this, arguments);
+//}
+//$util.inherits(XStruct, tubur.EasyStructure);
+//
+//var x = new XStruct({ cdnNmb: 45, cdnRequestData: 'werty' });
+//
+//dump.info(x.getErrors());
 
-    this.CdnNmb = new fields.Field({ required: true, type: "number", alias: 'cdnNmb' });
-    this.CdnRequestData = new fields.Field({ required: false, type: "string", alias: 'cdnRequestData' });
 
-    XStruct.super_.apply(this, arguments);
-}
-$util.inherits(XStruct, tubur.EasyStructure);
+wait
+    .turn(function(ok) {
 
-var x = new XStruct({ cdnNmb: 45, cdnRequestData: 'werty' });
+        var i = 0;
+        var si = setInterval(function() {
 
-dump.info(x, '++++++++++++++++++', x.toObject());
+            console.log('1-' + i);
+            i++;
 
+            if (i > 3) {
+                clearInterval(si);
+                wait.stop(321);
+            }
 
-//wait.turn(function(ok) {
-//
-//    var i = 0;
-//    var si = setInterval(function() {
-//
-//        console.log('1-' + i);
-//        i++;
-//
-//        if (i > 7) {
-//            clearInterval(si);
-//            ok(321);
-//        }
-//
-//    }, 1000);
-//
-//});
-//
-//wait.turn(function(ok) {
-//
-//    var i = 0;
-//    var si = setInterval(function() {
-//
-//        console.log('2-' + i);
-//        i++;
-//
-//        if (i > 7) {
-//            clearInterval(si);
-//            ok(123);
-//        }
-//
-//    }, 500);
-//
-//});
-//
-//wait.run(function(err) {
-//
-//    if (err) dump.error(err);
-//    dump.info('end');
-//
-//});
+        }, 1000);
+
+    })
+    .turn(function(ok) {
+
+        var i = 0;
+        var si = setInterval(function() {
+
+            console.log('2-' + i);
+            i++;
+
+            if (i > 7) {
+                clearInterval(si);
+                ok(123);
+            }
+
+        }, 500);
+
+    })
+    .run(function(err) {
+
+    if (err) dump.error(err);
+    dump.info('END');
+
+});
