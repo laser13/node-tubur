@@ -7,41 +7,51 @@
  * E = mc^2
  */
 
-var tubur = require('./../index'),
+var $tubur = require('./../index'),
     $util = require('util'),
 
-    fields = tubur.fields,
-    EasyStructure = tubur.EasyStructure,
+    fields = $tubur.fields,
+    EasyStructure = $tubur.EasyStructure,
 
     Collector = require('../lib/collector'),
 
-    wait = new tubur.Wait({ vita: 12 * 1000, log: false }),
+    wait = new $tubur.Wait({ vita: 12 * 1000, log: false }),
 
     __$__;
 
-global.dump = new tubur.Collector({ colored: true });
+global.dump = new $tubur.Collector({ colored: true });
 
-function XStruct() {
+var e204 = new $tubur.error.E204('Всё пропало шеф!');
+var e202 = new $tubur.error.E202('Всё пропало шеф!');
 
-    this.CdnNmb = new fields.Field({ required: true, type: "number", alias: 'cdnNmb', choices: [12,56] });
-    this.CdnRequestData = new fields.Field({ required: false, type: "string", alias: 'cdnRequestData' });
-
-    XStruct.super_.apply(this, arguments);
+//dump.info(e202.getDescription());
+function Der() {
+    throw new $tubur.error.E204('Всё пропало шеф!');
 }
-$util.inherits(XStruct, EasyStructure);
 
+Der();
 
-var validator = new EasyStructure();
-
-validator
-    .addField('ddd', { required: true, type: "number" })
-    .addField('kkk', { required: true, type: "string" });
-
-dump.info(validator.isValid({ ddd: '45' }), validator.getError(), validator.toObject());
-
-var xStruct = new XStruct({});
-
-dump.info(xStruct.isValid(), xStruct.getError());
+//function XStruct() {
+//
+//    this.CdnNmb = new fields.Field({ required: true, type: "number", alias: 'cdnNmb', choices: [12,56] });
+//    this.CdnRequestData = new fields.Field({ required: false, type: "string", alias: 'cdnRequestData' });
+//
+//    XStruct.super_.apply(this, arguments);
+//}
+//$util.inherits(XStruct, EasyStructure);
+//
+//
+//var validator = new EasyStructure();
+//
+//validator
+//    .addField('ddd', { required: true, type: "number" })
+//    .addField('kkk', { required: true, type: "string" });
+//
+//dump.info(validator.isValid({ ddd: '45' }), validator.getError(), validator.toObject());
+//
+//var xStruct = new XStruct({});
+//
+//dump.info(xStruct.isValid(), xStruct.getError());
 
 
 //wait

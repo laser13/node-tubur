@@ -5,7 +5,7 @@
     },
     "name": "node-tubur",
     "description": "Бесплатный сахар",
-    "version": "0.0.84",
+    "version": "0.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/laser13/node-tubur.git"
@@ -25,5 +25,5 @@
     },
     "readme": "\n=====================================================\n",
     "readmeFilename": "README.md",
-    "_id": "node-tubur@0.0.84"
+    "_id": "node-tubur@0.1.0"
 }
