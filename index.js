@@ -7,10 +7,6 @@
  * E = mc^2
  */
 
-exports.dcp = require('./lib/dcp');
-exports.SDS = require('./lib/sds');
-exports.SimpleStructure = require('./lib/sds');
-
 exports.fields = require('./lib/model/fields/index');
 exports.Field = require('./lib/model/fields/field');
 exports.EasyStructure = require('./lib/model/structure/easy');
