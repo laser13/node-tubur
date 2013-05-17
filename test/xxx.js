@@ -13,8 +13,8 @@ var EasyStructure = $tubur.EasyStructure;
 
 var dump = new $tubur.Collector({ colored: true });
 
-var field = new fields.EmailField('Email', { type: 'string[]', required: true });
+var field = new fields.Field('Email', { type: 'mixed', required: true });
 
-field.set(['wer@te.we', 56]);
+field.set();
 
 dump.error(field.getError(), field.get());
