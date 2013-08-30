@@ -11,7 +11,7 @@ var $util = require('util');
 var fields = $tubur.fields;
 var EasyStructure = $tubur.EasyStructure;
 
-var dump = new $tubur.Collector({ colored: true, output: 'mongo', mongoUrl: 'mongodb://localhost:27030/dsp-log' });
+var dump = new $tubur.Collector({ colored: true, showStack: true, output: 'mongo', mongoUrl: 'mongodb://localhost:27030/dsp-log' });
 
 var field = new fields.Field('Email', { type: 'mixed', required: true });
 
